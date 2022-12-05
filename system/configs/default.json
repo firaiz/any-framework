@@ -1,0 +1,45 @@
+{
+  "application" : {
+    "version"  : "v0.1",
+    "encoding" : "utf8",
+    "timezone" : "Asia/Tokyo",
+    "locale"   : "ja_JP.UTF-8",
+    "baseLink" : "/",
+    "ip"       : {
+      "enables" : [],
+      "disables" : []
+    }
+  },
+  "database" : {
+  },
+  "render" : {
+    "engine" : "Smarty",
+    "headers" : {
+      "Cache-Control" : [
+        "no-store, no-cache, must-revalidate",
+        "post-check=0, pre-check=0"
+      ],
+      "Pragma" : "no-cache"
+    },
+    "config" : {
+      "general" : {
+        "dir" : "template",
+        "auto-literal" : true
+      },
+      "cache" : {
+        "use" : true,
+        "dir" : "cache",
+        "lifetime" : 60
+      },
+      "compile" : {
+        "use-sub-dir" : true,
+        "forced" : false,
+        "dir"    : "compile"
+      },
+      "debug" : {
+        "use" : false,
+        "use-url" : false
+      }
+    }
+  }
+}
