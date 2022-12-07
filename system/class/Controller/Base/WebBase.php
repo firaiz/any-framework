@@ -9,10 +9,10 @@ use Firaiz\Ufl\Session;
 
 abstract class WebBase extends Base
 {
-    /** @var string */
-    protected string $mode;
+    /** @var ?string */
+    protected ?string $mode = '';
     
-    protected function init()
+    protected function init():void
     {
         parent::init();
 

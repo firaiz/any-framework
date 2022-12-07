@@ -39,7 +39,10 @@
       "debug" : {
         "use" : false,
         "use-url" : false
-      }
+      },
+      "plugins" : [
+        { "name" : "test", "type" : "modifier", "real_name": "add_file_hash" }
+      ]
     }
   }
 }
