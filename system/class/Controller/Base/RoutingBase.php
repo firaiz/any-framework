@@ -3,7 +3,7 @@ namespace Service\Controller\Base;
 
 abstract class RoutingBase extends WebBase
 {
-    protected function init()
+    protected function init(): void
     {
         parent::init();
     }

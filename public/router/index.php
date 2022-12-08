@@ -21,7 +21,7 @@ $router = Dispatcher::getInstance();
 //});
 //
 //$router->add('/timeline', function ($mode) {
-//    include_once '../timeline.php';
+//    include_once '../Timeline.php';
 //    $timeline = new Timeline();
 //    $timeline->setMode($mode);
 //    $timeline->execute();
@@ -32,8 +32,8 @@ $router->init(new ClassRouter());
 // class route   e.g. /pdf -> Pdf::index, /pdf/to/foo/var -> Pdf::to(foo,bar)
 $router->add('/pdf', 'Pdf');
 // static route  e.g. /timeline -> no detect route, /timeline/show/foo/var -> Timeline::display(foo,bar)
-$router->add('/timeline/show', array('class' => 'Timeline', 'method' => 'display'));
-
+//$router->add('/timeline/show', array('class' => \Service\Controller\Timeline::class, 'method' => 'display'));
+$router->add('/timeline', \Service\Controller\Timeline::class);
 // no detect route
 $router->initNoRoute(function ($route) {
     echo 'no detected call-path:', $route;

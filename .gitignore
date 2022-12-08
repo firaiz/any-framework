@@ -58,3 +58,5 @@ composer.lock
 public/assets/
 bower_components/
 node_modules/
+!storage/**/.gitkeep
+storage/

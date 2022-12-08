@@ -41,7 +41,7 @@
         "use-url" : false
       },
       "plugins" : [
-        { "name" : "test", "type" : "modifier", "real_name": "add_file_hash" }
+        { "name" : "add_hash", "type" : "modifier", "real_name": "add_file_hash" }
       ]
     }
   }
