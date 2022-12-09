@@ -20,7 +20,7 @@ abstract class Base extends SystemBase
         Date::init($this->conf->get('application.timezone'));
 
         // db自動接続
-        // $this->db->connect();
+        $this->db->connect();
 
         $this->logKey = StringUtility::randomUUID('');
     }

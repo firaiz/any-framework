@@ -11,6 +11,7 @@
     }
   },
   "database" : {
+    "dsn": "pdo-mysql://root:rootpw@mysql:3306/any-framework?charset=utf8mb4"
   },
   "render" : {
     "engine" : "Smarty",
