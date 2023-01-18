@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>title</title>
     <base href="{$baseLink}">
-    <link  href="{"assets/css/app.min.css"|add_hash}" type="text/css" rel="stylesheet">
-    <script src="{"assets/js/app.min.js"|add_hash}"   type="text/javascript"></script>
+    <link  href="{"assets/css/app.min.css"|add_file_hash}" type="text/css" rel="stylesheet">
+    <script src="{"assets/js/app.min.js"|add_file_hash}"   type="text/javascript"></script>
 </head>
 <body>
 

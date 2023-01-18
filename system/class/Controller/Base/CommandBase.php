@@ -1,16 +1,16 @@
 <?php
 namespace Service\Controller\Base;
 
-use UflAs\Date;
+use Firaiz\Ufl\Date;
 
 abstract class CommandBase extends Base
 {
     /** @var array allowed overwrite */
-    protected $singletons = array('conf' => 'Config', 'db' => 'Database');
+    protected array $singletons = array('conf' => 'Config', 'db' => 'Database');
     /** @var array allowed overwrite */
-    protected $instances = array('request' => 'Request');
+    protected array $instances = array('request' => 'Request');
 
-    protected function getLogString()
+    protected function getLogString(): bool|string
     {
         return json_encode([
             'date' => Date::nowString(),
@@ -18,7 +18,7 @@ abstract class CommandBase extends Base
         ]);
     }
 
-    protected function getLogFileName()
+    protected function getLogFileName(): string
     {
         return 'cmd-'.parent::getLogFileName();
     }

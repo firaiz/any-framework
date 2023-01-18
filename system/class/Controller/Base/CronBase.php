@@ -1,17 +1,17 @@
 <?php
 namespace Service\Controller\Base;
 
-use UflAs\Cron\ICron;
+use Firaiz\Ufl\Cron\ICron;
 
 class CronBase extends CommandBase
 {
     /** @var ICron[] */
-    protected $targets;
+    protected array $targets;
 
     /**
      * @return void
      */
-    public function execute()
+    public function execute():void
     {
         foreach ($this->targets as $target) {
             $target->execute();

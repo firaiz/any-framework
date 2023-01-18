@@ -18,14 +18,14 @@ abstract class WebBase extends Base
 
         // IP許可設定
         $ipEnables = $this->conf->get('application.ip.enables', array());
-        if (0 < count($ipEnables) && !in_array(REAL_IP, $ipEnables)) {
+        if (0 < count($ipEnables) && !in_array(REAL_IP, $ipEnables, true)) {
             http_response_code(404);
             exit;
         }
 
         // IP拒否設定
         $ipDisables = $this->conf->get('application.ip.disables', array());
-        if (0 < count($ipDisables) && in_array(REAL_IP, $ipDisables)) {
+        if (0 < count($ipDisables) && in_array(REAL_IP, $ipDisables, true)) {
             http_response_code(404);
             exit;
         }
@@ -53,7 +53,7 @@ abstract class WebBase extends Base
         $render->assign('baseLink', $this->conf->get('application.baseLink'));
     }
 
-    protected function initCommonAssign()
+    protected function initCommonAssign(): void
     {
         $this->response->assign('now', Date::now());
         $this->response->assign('today', Date::today());
@@ -61,7 +61,7 @@ abstract class WebBase extends Base
         $this->response->assign('isLegacyBrowser', IS_LEGACY_BROWSER);
     }
 
-    private function preRouting()
+    private function preRouting(): bool
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             return true;
